@@ -1,0 +1,6 @@
+People local to your location:<br><br>
+<% @random.each do |random| %>
+	<%= random.email %>	<%= link_to 'show profile', profile_path(random) %>
+<% end %>
+
+<br><br>

@@ -1,0 +1,8 @@
+<%= @user.email %>
+
+<%= @user.location.postcode %>
+<br><br>
+
+<% unless profile @user %>
+<%=	link_to 'friend request', user_friend_request_path(@user), method: :post %>
+<% end %>

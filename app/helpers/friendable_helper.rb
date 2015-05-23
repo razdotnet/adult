@@ -1,0 +1,2 @@
+module FriendableHelper
+end
