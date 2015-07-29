@@ -1,6 +1,64 @@
-feed
+<div class="large-12 columns padding end">
+	<div class="large-3 columns">
+	<div class="spacing"></div>
+		<div class="feed-profile-overview text-center">
+			<div class="feed-profile-overview-avatar">
+				<div class="profile-overview-avatar">
+					<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg">
+				</div>
+			</div>
 
-<%= link_to 'sign out', destroy_user_session_path, method: :delete %><br><br>
+			<div class="spacing"></div>
 
-<%= link_to 'people', people_path %> 
-<%= link_to 'explore', explore_path %>
+			<span>welcome, <%= current_user.email %>.</span>
+		</div>
+
+		<div class="spacing"></div>
+
+		<div class="account-overview text-center">
+			<span>Account Overview</span><br>
+
+			<div class="account-overview-links">
+				<nav>
+					<%= link_to 'accoutn settings', edit_account_path %>
+					<%= link_to 'conversations', conversations_path %>
+					<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+					<%= link_to 'my wishlist', wishlist_path(current_user) %>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	
+	<div class="large-9 columns end">
+	<% @posts.each do |post| %>
+		<div class="large-12 columns padding margin-post">
+			<div class="large-2 columns padding">
+				<div class="user-post-avatar-container">
+					<div class="user-post-avatar">
+						<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg">
+					</div>
+					<span class="user-post-avatar-username"><%= post.user.email %></span>
+				</div>
+			</div>
+
+			<div class="large-10 columns">
+				<div class="post-container">
+					<p>
+						<%= post.body %>
+					</p>
+				</div>
+
+				<div class="post-bottom text-center">
+					view full post
+				</div>
+			</div>
+		</div>
+	<% end %>
+	</div>
+
+
+</div>
+
+<%= link_to 'sign out', destroy_user_session_path, method: :delete %>

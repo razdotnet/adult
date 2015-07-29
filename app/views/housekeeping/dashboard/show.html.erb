@@ -1,0 +1,42 @@
+Housekeeping Dashboard!<br><br>
+
+Product list:<br>
+<% @products.each do |product| %>
+	<%= product.title %>
+<% end %>
+
+<br>
+<%= link_to 'view all products', housekeeping_products_path %>
+<%= link_to 'add new product', new_housekeeping_product_path %>
+
+
+<br><br><br>
+
+User list:<br>
+
+<% @users.each do |user| %>
+	<%= link_to user.email, housekeeping_user_path(user) %>
+<% end %>
+<br>
+<%= link_to 'view all users', housekeeping_users_path %>
+
+<br><br><br>
+Wishlists:<br>
+
+<% @wishlists.each do |wishlist| %>
+	<%= link_to wishlist.id, housekeeping_wishlist_path(wishlist) %>
+<% end %>
+
+<br><br><br>
+
+Product Categories:<br>
+
+<% @categories.each do |category| %>
+	<%= link_to category.title, housekeeping_category_path(category) %><br>
+<% end %>
+
+<br><br><br>
+
+<%= @orders.each do |order| %>
+
+<% end %>

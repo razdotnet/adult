@@ -1,0 +1,51 @@
+<div class="large-12 columns padding">
+	<div class="large-2 columns padding">
+		<div class="settings-side-links text-center">
+		<h5>My Settings</h5>
+			<nav>
+				<%= link_to 'general', '#', id: 'general-link' %>
+				<%= link_to 'location', '#', id: 'location-link' %>
+				<%= link_to 'questions', '#', id: 'wishlist-link' %>
+				<%= link_to 'interests', '#', id: 'wishlist-link' %>
+			</nav>
+		</div>
+	</div>
+
+	<div class="large-10 columns">
+		<div class="large-12 columns box-container-main">
+			<h3 class="text-center">General Account Settings</h3>
+			<div class="large-6 columns">
+				<%= render('form') %>
+			</div>
+
+			<div class="large-6 columns">
+				<div class="settings-avatar-container">
+					<%= image_tag @user.avatar.url %>
+
+					<div class="avatar-details text-center">
+						<span class="settings-username"><%= @user.username %></span><br>
+						<span class="settings-email"><%= @user.email %></span>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="large-10 columns">
+		<div class="large-12 columns box-container1">
+			<h3 class="text-center">Location Settings</h3>
+			<div class="large-6 columns">
+				<%= render('locations/form') %>
+			</div>
+		</div>
+	</div>
+
+	<div class="large-10 columns">
+		<div class="large-12 columns box-container2">
+			<h3 class="text-center">wishlist Settings</h3>
+			<div class="large-6 columns">
+			lololol
+			</div>
+		</div>
+	</div>
+</div>

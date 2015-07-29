@@ -1,0 +1,10 @@
+<div class="row">
+	<%= @pictures.each do |picture| %>
+		link:<%= link_to 'picture', user_picture_path(@user, picture) %><br>
+		<%= image_tag(picture.attachment.url) %>
+	<% end %>
+
+	<br><br>
+
+	<%= render 'form' %>
+</div>

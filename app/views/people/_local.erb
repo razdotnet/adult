@@ -1,6 +1,6 @@
 People local to your location:<br><br>
 <% @local.each do |local| %>
-	<%= local.email %>	<%= link_to 'show profile', profile_path(local) %>
+	<%= local.email %>	<%= link_to 'show profile', user_path(local) %>
 <% end %>
 
 <br><br>

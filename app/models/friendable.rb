@@ -4,4 +4,12 @@ class Friendable < ActiveRecord::Base
 
 	scope :pending, -> {where(accepted: false)}
 	scope :accepted, -> {where(accepted: true)}
+
+	def self.request(user, friend)
+		transaction do
+			create(user_id: user, friend_id: friend)
+			create(user_id: friend, friend_id: user)
+		end
+	end
+
 end

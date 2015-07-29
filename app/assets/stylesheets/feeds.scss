@@ -1,3 +1,164 @@
 // Place all the styles related to the Feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-post-avatar-container{
+    position: relative;
+
+    width: 100%;
+    height: 130px;
+
+}
+
+.user-post-avatar-username{
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+
+        color: #ece6e6;
+
+}
+
+.user-post-avatar{
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+
+
+.post-container{
+    position: relative;
+
+    width: 100%;
+    padding: 10px;
+
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 0.01em solid #AEB3AD;
+
+    background: #5b6a7d;
+    color: #ece6e6;
+
+
+}
+
+.margin-post{
+    margin: 10px 0 10px 0;
+}
+
+.post-container p{
+    word-wrap: break-word;
+}
+
+.post-bottom{
+    position: relative;
+    padding: 5px;
+
+    border-right: 0.01em solid #AEB3AD;
+    border-left: 0.01em solid #AEB3AD;
+    border-bottom: 0.01em solid #AEB3AD;
+    border-bottom-left-radius: 7px; 
+    border-bottom-right-radius: 7px;
+
+
+    background: #5b6a7d;
+    color: #ece6e6;
+}
+
+.right-side{
+    position: absolute;
+
+    height: 100%;
+    border-left: 2px solid #AEB3AD;
+}
+
+/* BRIEF PROFILE */
+
+.feed-profile-overview{
+    position: relative;
+
+    width: 100%;
+
+    padding: 10px;
+
+    background: #5b6a7d;
+    color: #ece6e6;
+
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+}
+
+.feed-profile-overview-avatar-container{
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    background: red;
+}
+
+.feed-profile-overview-avatar{
+        position: relative;
+
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.feed-profile-overview{
+    position: relative;
+
+    padding: 10px 0 10px 0;
+
+    width: 100%;
+}
+
+.account-overview{
+    position: relative;
+
+    width: 100%;
+
+    padding: 10px;
+
+     background: #5b6a7d;
+    color: #ece6e6;
+
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    border-radius: 3px;
+}
+
+.account-overview-links nav a{
+    position: relative;
+    display: block;
+
+    color: #ece6e6;
+
+}
+
+
+/*  
+
+ background: #fefefe;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(168,144,168,0.71);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(168,144,168,0.71);
+    box-shadow: 0px 0px 6px 1px rgba(168,144,168,0.71); border: 1px solid #e8dada;
+
+     */

@@ -1,1 +1,3 @@
-<%= render 'people/random' %>
+<% @users.each do |user| %>
+	<%= user.email %><%= link_to 'profile', profile_path(user) %><br>
+<% end %>

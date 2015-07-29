@@ -1,0 +1,62 @@
+<% if @wishlist.nil? %>
+	you don't have a wishlist content here
+
+	<%= link_to 'create one', create_wishlist_path, method: :post %>
+
+	<% else %>
+
+	<div class="large-12 columns">
+
+	<div class="large-4 columns">
+		<div class="spacing"></div>
+
+		<div class="wishlist-user-container">
+			<div class="wishlist-user-avatar">
+			<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg">
+			</div>
+
+			<div class="wishlist-username-container text-center">
+				<span class="wishlist-username"><%= @wishlist.user.email %></span>
+
+				<div class="wishlist-user-info">
+					<span class="number-of-products">120 products</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="large-8 columns">
+		<h3 class="text-center wishlist-title">Wishlist Items</h3>
+		<% @wishlist.items.each do |item| %>
+			<div class="large-12 columns padding product-margin">
+				<div class="large-5 columns padding">
+					<div class="product-container">
+						<img src="http://www.dropshipping.co.uk/catalog/images/10TWSTPL.jpg">
+					</div>
+				</div>
+
+				<div class="large-7 columns padding">
+					<div class="product-information">
+						<div class="product-header">
+							<span><%= item.product.title %></span>
+
+							<p class="product-desc">
+								<%= item.product.desc %>
+							</p>
+						</div>
+
+						<div class="product-bottom text-center">
+							<div class="buy-button-large">
+								<span>buy admin this for $210</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+
+</div>
+<% end %>

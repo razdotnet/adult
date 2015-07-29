@@ -1,0 +1,29 @@
+<div class="largeWidth row padding">
+	<% if @conversations.empty? %>
+		No conversations.
+	<% else %>
+	<h1>my convos</h1>
+		<% @conversations.each do |conversation| %>
+			<div class="large-12 columns conversation-container padding">
+				<div class="large-2 columns padding">
+					<div class="conversation-avatar">
+						<img src="https://s3.amazonaws.com/uifaces/faces/twitter/cbillins/128.jpg">
+					</div>
+				</div>
+
+				<div class="large-10 columns padding">
+					<div class="conversation-content">
+						<span class="conversation-username"><%= conversation.sender.username %></span>
+						<p class="conversation-body"><%= conversation.messages.last.body %>	<%= link_to 'view conversation', conversation_messages_path(conversation) %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+
+	<br><br>
+
+	<% if user_signed_in? %>
+		<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+	<% end %>
+</div>

@@ -1,0 +1,6 @@
+<%= form_for @product, url: housekeeping_products_path, method: :post do |f| %>
+	<%= f.text_field :title %>
+	<%= f.text_field :desc %>
+	<%= collection_select(:cateogry, :category_id, Category.all, :id, :title) %>
+	<%= f.submit('Add product to catalog') %>
+<% end %>

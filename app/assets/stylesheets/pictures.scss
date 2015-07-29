@@ -1,0 +1,95 @@
+// Place all the styles related to the Pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.picture-container{
+    position: relative;
+    
+    width: 700px;
+    margin: 0 auto;
+
+    
+    
+    background: #5b6a7d;
+    color: #ece6e6;
+
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+}
+
+.picture-container img{
+    position: relative;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.picture-details{
+    position: relative;
+    
+    width: 700px;
+    margin: 0 auto;
+    
+    background: #5b6a7d;
+    color: #ece6e6;
+
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+    box-shadow: 0px 0px 0px 2px rgba(126,137,150,1);
+}
+
+.picture-details{
+    position: relative;
+    
+    padding: 10px;
+    
+}
+
+.picture-title{
+    position: relative;
+    font-size: 1.6em;
+    letter-spacing: 0.2em;
+
+}
+
+.picture-details-username{
+    position: relative;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+}
+
+.picture-info{
+    position: relative;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #7E8996;
+    text-align: center;
+}
+
+.picture-comments{
+    position: relative;
+
+    border-bottom: 2px solid #7E8996;
+    padding: 10px 0;
+}
+
+.picture-comment-avatar-container{
+	position: relative;
+}
+
+.picture-comment-avatar{
+	position: relative;
+
+	border-radius: 50%;
+	height: 100px;
+	overflow: hidden;	
+	width: 100px;
+
+	margin: 0 auto;
+}
+
+.picture-comment-content{
+	position: relative;
+	word-wrap: break-word;
+}

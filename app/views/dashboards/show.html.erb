@@ -1,14 +1,3 @@
-Welcome to your dashboard:  <%= @user.email %><br><br><br><br>
-
-Pending friend requests:<br>
-<% @friend_requests.each do |requests| %>
-	<%= requests.friend.email %>	
-	<%= link_to 'accept friend request', user_friend_request_accept_path(@user), method: :post %>
-<% end %>
-<br><br>
-
-Friends:
-<% @friends.each do |requests| %>
-	<%= requests.friend.email %>	
-	<%= link_to 'accept friend request', user_friend_request_accept_path(@user), method: :post %>
-<% end %>
+<div class="row">
+	<%= @user.email %>
+</div>

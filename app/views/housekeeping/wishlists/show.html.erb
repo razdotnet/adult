@@ -1,0 +1,6 @@
+wishlist belongs to: <%= @wishlist.user.email %>
+<br><br>
+
+<%= @wishlist.items.each do |product| %>
+	<%= product.product.title %>
+<% end %>

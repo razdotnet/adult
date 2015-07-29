@@ -1,7 +1,8 @@
 class DashboardsController < ApplicationController
 	def show
 		@user = current_user
-		@friend_requests = Friendable.pending.where.not(user_id: current_user.id)
-		@friends = Friendable.where(user_id: current_user.id).accepted
+		@friends_count = Friendable.where(user_id: current_user.id).count
+		@conversations = Conversation.my_convos(@user).count
+		@pictures = Picture.all
 	end
 end

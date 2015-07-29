@@ -1,19 +1,33 @@
 class UsersController < ApplicationController
 	def show
-		@user = User.find(params[:id])
-		@friends = @user.friendables
+		@user = User.find(params[:user_id])
+		@posts = @user.posts
+		@friends = Friendable.where(friend_id: current_user)
 	end
 
-	def friend_request
-		user_id = current_user.id
-		friend_id = params[:user_id]
-		friendable = Friendable.create(user_id: user_id, friend_id: friend_id, accepted: false)
-		redirect_to root_url, notice: 'Sent friend request.'
+	def edit
+		@user = current_user
+		@location = current_user.location
+
+		if params[:email]
+			render 'email'
+		end
 	end
 
-	def friend_request_accept
-		friendable = Friendable.where(user_id: current_user.id).first
-		friendable.update_attributes(accepted: true)
-		redirect_to root_url, notice: 'accepted friend request'
+	def update
+		@user = User.find(current_user.id)
+
+		if @user.update(user_params)
+			sign_in @user, :bypass => true
+			redirect_to root_url
+		else
+			render "edit"
+		end
 	end
+
+	private
+
+		def user_params
+			params.require(:user).permit(:email, :postcode, :username, :model, :avatar)
+		end
 end

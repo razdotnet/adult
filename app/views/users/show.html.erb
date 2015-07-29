@@ -1,8 +1,157 @@
-<%= @user.email %>
+ <div class="spacing"></div>
+    <div class="row padding">
+        <div class="large-12 columns">
+            <div class="large-3 columns">
+                <div class="user-profile-container">
+                    <div class="user-profile-avatar text-center">
+                        <div class="user-avatar">
+                          <img src="https://randomuser.me/api/portraits/lego/6.jpg" />  
+                        </div>
 
-<%= @user.location.postcode %>
-<br><br>
+                        <div class="user-profile-name">
+                            <span><%= @user.id %></span>
+                        </div>
 
-<% unless profile @user %>
-<%=	link_to 'friend request', user_friend_request_path(@user), method: :post %>
+                        <div class="user-profile-model">
+                            <% if user_signed_in? %>
+                                <% if already_friends? current_user %>
+                                    <span>already friends</span>
+                                <% else %>
+                                    <% if @user.id == current_user.id %>
+                                        you can't befriend yourself
+                                        <% else %>
+                                        <span>become friends</span>
+                                    <% end %>   
+                                <% end %>
+                                <br>
+                                <% if @user.id == current_user.id %>
+                                    
+                                    <% else %>
+                                        <% if already_friends? current_user %>
+                                            <%= link_to 'message', conversations_path(sender_id: current_user.id, recipient_id: @user), method: :post %>
+                                        <% end %>
+                                <% end %>
+
+                            <% end %>
+                        </div>
+                    </div>
+            
+                    <div class="user-profile-bio text-center">
+                        <p>short bio about user.short bio about user.short bio about user.short bio about user.</p>
+                    </div>
+                    
+                    <div class="bio-buttons">
+                        <div class="bio-button">
+                            asdasdasd
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spacing"></div>
+                
+                <div class="user-questions-profile">
+                    <div class="user-questions-profile-header text-center">
+                        <span>About Admin</span>
+                    </div>
+
+                    <div class="user-question">
+                        <div class="question">
+                            smoke?
+                        </div>
+
+                        <div class="answer">
+                            yes
+                        </div>
+                    </div>
+
+                    <div class="user-question">
+                        <div class="question">
+                            smoke?
+                        </div>
+
+                        <div class="answer">
+                            yes
+                        </div>
+                    </div>
+
+                    <div class="user-question">
+                        <div class="question">
+                            smoke?
+                        </div>
+
+                        <div class="answer">
+                            yes
+                        </div>
+                    </div>
+
+                    <div class="user-question">
+                        <div class="question">
+                            smoke?
+                        </div>
+
+                        <div class="answer">
+                            yes
+                        </div>
+                    </div>
+
+                    <span style="padding: 5px 0 5px 0;">learn more!</span>
+                </div>  
+            </div>
+    
+            
+            <div class="large-7 columns end user-posts-links">
+               
+               <div class="large-12 columns">
+                    <div class="large-4 columns user-posts-select text-center">
+                        <span>wishlist</span>
+                   </div>
+                   
+                   <div class="large-4 columns user-posts-select text-center">
+                        <span>pictures</span>
+                   </div>
+                   
+                   <div class="large-4 columns user-posts-select-end text-center">
+                        <span>posts</span>
+                   </div>
+                </div>
+            </div>
+            
+
+            <%= render('posts/posts') %>
+            
+        </div>
+    </div>  
+
+
+        <div class="large-12 columns">
+        <% if user_signed_in? %>
+    <% if already_friends? current_user %>
+        <span>already friends</span>
+    <% else %>
+        <% unless profile @user %>
+            <%= link_to 'friend request', friend_path, method: :post %>
+        <% end %>
+    <% end %>
+    <br><br><br>
+    <% unless profile @user %>
+        <%= link_to 'message', conversations_path(sender_id: current_user.id, recipient_id: @user), method: :post %>
+    <% end %>
 <% end %>
+
+    <br><br><br><br>
+
+    <%= @posts.each do |post| %>
+        
+    <% end %>
+
+    <%= @user.friends.each do |friend| %>
+
+
+    <% end %>
+
+    <h2><%= @user.email %></h2>
+    <h2><%= @user.username %></h2>
+    <h2><%= @user.id %></h2>
+    <br><br><br>
+
+    </div>

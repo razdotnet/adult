@@ -1,0 +1,2 @@
+module Housekeeping::DashboardHelper
+end

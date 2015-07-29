@@ -1,0 +1,22 @@
+<div class="midWidth row">
+	<br><br>
+
+<% @messages.each do |message| %>
+	<h4><%= message.user.email %></h4>
+	<span><%= message.body %></span><br><br>
+<% end %>
+
+<br><br><br>
+
+<h5>Conversation between:</h5>
+
+<%= @conversation.sender.email %>
+<%= @conversation.recipient.email %>
+
+
+<%= form_for [@conversation, @message] do |f| %>
+	<%= f.text_field :body %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.submit %>
+<% end %>
+</div>

@@ -1,0 +1,8 @@
+<% @friends.each do |friend| %>
+	<% friend.pictures.each do |picture| %>
+		<h4><%= picture.user.email %></h4>
+		<h5><%= picture.title %></h5><br>
+		<%= image_tag(picture.attachment) %><br>
+		<%= link_to 'show', user_picture_path(picture.user, picture) %>
+	<% end %>
+<% end %>
